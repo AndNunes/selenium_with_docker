@@ -3,9 +3,6 @@ FROM python:3.7.7-slim-stretch
 RUN apt-get update -y && \
     apt-get install -y xvfb unzip
 
-ENV CHROMEDRIVER_DIR /chromedriver
-RUN mkdir $CHROMEDRIVER_DIR
-
 RUN apt-get update && \
     apt-get install -y gnupg wget curl unzip --no-install-recommends && \
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
